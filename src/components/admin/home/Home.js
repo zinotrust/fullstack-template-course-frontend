@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Loader from "../../loader/Loader";
+import useRedirectUser from "../../../customHooks/useRedirectUser";
 
 const Home = () => {
+  useRedirectUser("/login");
+
   const [isLoading, setisLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {

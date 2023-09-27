@@ -2,9 +2,10 @@ import { useState } from "react";
 import "./Sidebar.scss";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { FaLink } from "react-icons/fa";
-import menu from "../../../data/sidebar";
+import menu, { adminMenu } from "../../../data/sidebar";
 import SidebarItem from "./SidebarItem";
 import { useNavigate } from "react-router-dom";
+import { AdminOnlyLink } from "../../protect/hiddenLink";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -50,6 +51,13 @@ const Sidebar = () => {
               isOpen={isOpen}
               setIsOpen={setIsOpen}
             />
+          );
+        })}
+        {adminMenu.map((item, index) => {
+          return (
+            <AdminOnlyLink key={index}>
+              <SidebarItem item={item} isOpen={isOpen} setIsOpen={setIsOpen} />
+            </AdminOnlyLink>
           );
         })}
       </div>

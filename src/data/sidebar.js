@@ -1,4 +1,4 @@
-import { FaTh } from "react-icons/fa";
+import { FaTh, FaUsers } from "react-icons/fa";
 import { BiUserCircle } from "react-icons/bi";
 
 const menu = [
@@ -21,6 +21,14 @@ const menu = [
         path: "/admin/account",
       },
     ],
+  },
+];
+
+export const adminMenu = [
+  {
+    title: "Users",
+    icon: <FaUsers />,
+    path: "/admin/users",
   },
 ];
 
